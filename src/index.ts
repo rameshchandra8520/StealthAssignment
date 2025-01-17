@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express, { Application } from 'express';
 import connectDB from './config/db';
 import authRoutes from './routes/auth.routes';
+import taskRoutes from './routes/task.routes';
 
 // Initialize environment variables
 dotenv.config();
@@ -17,6 +18,7 @@ connectDB();
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
 
 
 app.listen(PORT, () => {
